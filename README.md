@@ -3,9 +3,7 @@
 An api based on the rick and morty series, using ReactJs, Redux-Toolkit, NextUI.
 
 
-## 📷 Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://res.cloudinary.com/dg84upfsp/image/upload/v1665799219/book/original-d752a0a90f46e236d935ae27f471d729_szjckc.webp)
 
 
 ## 📝 Features
