@@ -9,7 +9,7 @@ export interface CharacterI {
   origin: LocationI
   location: LocationI
   image: string
-  episode: string[]
+  episode: EpisodeI[]
   url: string
   created: Date
 }
@@ -18,6 +18,15 @@ export interface PropsI {
   children?: JSX.Element | JSX.Element[]
 }
 
+export interface EpisodeI {
+  id: number
+  name: string
+  air_date: string
+  episode: string
+  characters: CharacterI[] | string[]
+  url: string
+  created: Date
+}
 export interface InfoI {
   count: number
   pages: number

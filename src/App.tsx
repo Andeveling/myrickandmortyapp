@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { CharacterDetails, Header, Layout } from '@/components'
 import Footer from './components/Footer/Footer'
+import EpisodeDetails from './components/EpisodeDetails/EpisodeDetails'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/character/:id' element={<CharacterDetails />} />
+              <Route path='/episode/:id' element={<EpisodeDetails />} />
               <Route path='*' element={<h1>No found</h1>} />
             </Routes>
           </Layout>

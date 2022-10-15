@@ -1,4 +1,5 @@
-import { CharacterI, PageI } from '@/types'
+import { CharacterI, EpisodeI, PageI } from '@/types'
+import { createSelector } from '@reduxjs/toolkit'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const apiSlice = createApi({
@@ -11,7 +12,10 @@ export const apiSlice = createApi({
     getCharacterById: builder.query<CharacterI, string | number>({
       query: (id) => `character/${id}`,
     }),
+    getEpisodeById: builder.query<EpisodeI, string | number>({
+      query: (id) => `episode/${id}`,
+    }),
   }),
 })
 
-export const { useGetCharactersQuery, useGetCharacterByIdQuery } = apiSlice
+export const { useGetCharactersQuery, useGetCharacterByIdQuery, useGetEpisodeByIdQuery } = apiSlice

@@ -4,16 +4,20 @@ import { useContext } from 'react'
 import { styleContainer, styledHead, styleText } from './stylesHeader'
 import Brightness4OutlinedIcon from '@mui/icons-material/Brightness4Outlined'
 import Brightness5OutlinedIcon from '@mui/icons-material/Brightness5Outlined'
+import { useNavigate } from 'react-router-dom'
 
 export const Header = () => {
   const context = useContext(Context)
   const handleTheme = () => context?.setIsDark((state) => !state)
+  const navigate = useNavigate()
 
   return (
     <>
       <Row css={styledHead}>
+        <Text size='$2xl' b css={{ mx: 20, cursor: 'pointer' }} onClick={() => navigate('/')}>
+          Home
+        </Text>
         <Switch
-          css={{ m: 10 }}
           size='xl'
           borderWeight='extrabold'
           color='success'
@@ -21,6 +25,7 @@ export const Header = () => {
           onChange={handleTheme}
           iconOn={<Brightness5OutlinedIcon />}
           iconOff={<Brightness4OutlinedIcon />}
+          css={{ mx: 10 }}
         />
       </Row>
       <Row css={styleContainer}>

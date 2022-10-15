@@ -31,5 +31,7 @@ export const styledHead: CSS = {
   bg: '$backgroundAlpha',
   display: 'flex',
   justifyContent: 'end',
+  alignContent: 'center',
   borderBottom: '2px $success solid',
+  py: 10,
 }
