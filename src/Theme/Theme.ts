@@ -1,6 +1,6 @@
-import { createTheme, Theme } from '@nextui-org/react'
+import { createTheme } from '@nextui-org/react'
 
-export const lightTheme: Theme = createTheme({
+export const lightTheme = createTheme({
   type: 'light',
   theme: {
     colors: {
@@ -10,7 +10,7 @@ export const lightTheme: Theme = createTheme({
   },
 })
 
-export const darkTheme: Theme = createTheme({
+export const darkTheme = createTheme({
   type: 'dark',
   theme: {
     colors: {
