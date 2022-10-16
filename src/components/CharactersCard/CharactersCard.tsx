@@ -1,6 +1,6 @@
 import { Card, Text, Col, Badge } from '@nextui-org/react'
 import { CharacterI } from '@/types'
-import { selectColorBadge } from './selectColorBadge'
+import { selectColorBadge } from '../../utils/selectColorBadge'
 import { useNavigate } from 'react-router-dom'
 
 export const CharactersCard = (character: Partial<CharacterI>) => {

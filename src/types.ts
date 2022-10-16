@@ -9,7 +9,7 @@ export interface CharacterI {
   origin: LocationI
   location: LocationI
   image: string
-  episode: EpisodeI[]
+  episode: EpisodeI['url'][]
   url: string
   created: Date
 }
@@ -23,7 +23,7 @@ export interface EpisodeI {
   name: string
   air_date: string
   episode: string
-  characters: CharacterI[] | string[]
+  characters: CharacterI['url'][]
   url: string
   created: Date
 }

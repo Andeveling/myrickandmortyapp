@@ -1,2 +1,2 @@
 export * from './CharactersCard'
-export * from './selectColorBadge'
+export * from '../../utils/selectColorBadge'

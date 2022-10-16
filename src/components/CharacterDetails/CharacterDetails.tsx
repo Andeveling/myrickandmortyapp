@@ -1,5 +1,5 @@
 import { useGetCharacterByIdQuery } from '@/redux'
-import { EpisodeI } from '@/types'
+import { extractId } from '@/utils/extractId'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { Avatar, Badge, Button, Card, Grid, Loading, Row, Spacer, Text } from '@nextui-org/react'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -9,19 +9,6 @@ const CharacterDetails = () => {
   const params = useParams()
   const navigate = useNavigate()
   const { data: character, isSuccess, isLoading, isError } = useGetCharacterByIdQuery(params.id || '')
-
-  const handleNumberEpisode = (episode: string | EpisodeI): string => {
-    let aux = ''
-    if (typeof episode === 'string') {
-      aux = episode
-        .slice(episode.length - 3)
-        .replace('/', '')
-        .replace('e', '')
-    } else {
-      aux = episode.id.toString()
-    }
-    return aux
-  }
 
   let content
   if (isLoading) content = <Loading size='xl' color='success' />
@@ -98,15 +85,15 @@ const CharacterDetails = () => {
               <Text h2>Episodes</Text>
               <Grid.Container gap={1} justify='center'>
                 {character?.episode.map((episode) => (
-                  <Grid key={handleNumberEpisode(episode)}>
+                  <Grid key={extractId(episode, 'episode/')}>
                     <Button
                       rounded
                       ghost
                       size='sm'
                       css={{ width: 70 }}
                       color='success'
-                      onPress={() => navigate(`/episode/${handleNumberEpisode(episode)}`)}>
-                      Episode: {handleNumberEpisode(episode)}
+                      onPress={() => navigate(`/episode/${extractId(episode, 'episode/')}`)}>
+                      Episode: {extractId(episode, 'episode/')}
                     </Button>
                   </Grid>
                 ))}

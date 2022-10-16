@@ -1,6 +1,8 @@
+export { default as AvatarEpisode } from './AvatarEpisode/AvatarEpisode'
 export * from './CharacterDetails'
 export * from './Characters'
 export * from './CharactersCard'
+export * from './EpisodeDetails'
 export * from './Favorites/Favorites'
 export * from './Footer'
 export * from './Header'

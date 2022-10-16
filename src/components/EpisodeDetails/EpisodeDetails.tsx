@@ -1,17 +1,13 @@
-import { Context } from '@/Context'
-import { useGetCharactersQuery, useGetEpisodeByIdQuery } from '@/redux'
+import { useGetEpisodeByIdQuery } from '@/redux'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import { Avatar, Badge, Button, Card, Grid, Loading, Row, Spacer, Text } from '@nextui-org/react'
-import { useContext } from 'react'
+import { Button, Grid, Loading, Row, Text } from '@nextui-org/react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { selectColorBadge } from '../CharactersCard'
+import { AvatarEpisode } from '../AvatarEpisode'
 
 const EpisodeDetails = () => {
   const params = useParams()
-  const context = useContext(Context)
   const navigate = useNavigate()
   const episode = useGetEpisodeByIdQuery(params.id || '')
-  const characters = useGetCharactersQuery(context?.currentPage || 0)
 
   let content
   if (episode.isLoading) content = <Loading size='xl' color='success' />
@@ -46,28 +42,10 @@ const EpisodeDetails = () => {
 
           <Grid xs={12} sm={6} justify='center'>
             <Grid.Container gap={2} justify='center'>
-              {characters.data?.results.map((character) => {
+              {episode.data.characters.map((characterLink) => {
                 return (
-                  <Grid key={character.id}>
-                    <Badge
-                      placement='top-left'
-                      variant='bordered'
-                      disableOutline
-                      content={character?.status}
-                      size='md'
-                      color={selectColorBadge(character?.status || '')}>
-                      <Card variant='flat' isHoverable isPressable>
-                        <Avatar
-                          squared
-                          src={character?.image || ''}
-                          size='xl'
-                          color={selectColorBadge(character?.status || '')}
-                          bordered
-                          css={{ cursor: 'pointer' }}
-                          onClick={() => navigate(`/character/${character.id}`)}
-                        />
-                      </Card>
-                    </Badge>
+                  <Grid key={characterLink}>
+                    <AvatarEpisode characterLink={characterLink} />
                   </Grid>
                 )
               })}

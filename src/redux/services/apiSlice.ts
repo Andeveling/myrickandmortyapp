@@ -1,10 +1,11 @@
 import { CharacterI, EpisodeI, PageI } from '@/types'
-import { createSelector } from '@reduxjs/toolkit'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+
+export const baseUrl = 'https://rickandmortyapi.com/api/'
 
 export const apiSlice = createApi({
   reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://rickandmortyapi.com/api/' }),
+  baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getCharacters: builder.query<PageI, number>({
       query: (page) => `character/?page=${page}`,
