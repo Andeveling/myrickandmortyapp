@@ -3,7 +3,7 @@ import { EpisodeI } from '@/types'
 import { extractId } from '@/utils/extractId'
 import { Avatar, Badge, Card, Loading, Row, Text } from '@nextui-org/react'
 import { useNavigate } from 'react-router-dom'
-import { selectColorBadge } from '../CharactersCard'
+import { selectColorBadge } from '@/components'
 
 const AvatarEpisode = ({ characterLink }: { characterLink: EpisodeI['url'] }) => {
   const navigate = useNavigate()

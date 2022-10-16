@@ -3,9 +3,7 @@ import { store } from '@/redux'
 import { Home } from '@/views'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { CharacterDetails, Header, Layout } from '@/components'
-import Footer from './components/Footer/Footer'
-import EpisodeDetails from './components/EpisodeDetails/EpisodeDetails'
+import { CharacterDetails, Header, Layout, Footer, EpisodeDetails } from '@/components'
 
 function App() {
   return (

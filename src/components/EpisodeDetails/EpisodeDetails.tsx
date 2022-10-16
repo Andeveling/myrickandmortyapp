@@ -1,8 +1,8 @@
+import { AvatarEpisode } from '@/components'
 import { useGetEpisodeByIdQuery } from '@/redux'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { Button, Grid, Loading, Row, Text } from '@nextui-org/react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { AvatarEpisode } from '../AvatarEpisode'
 
 const EpisodeDetails = () => {
   const params = useParams()

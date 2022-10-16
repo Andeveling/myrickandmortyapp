@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react'
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp'
-import { useNavigate } from 'react-router-dom'
-import { Avatar, Button } from '@nextui-org/react'
+import { Avatar } from '@nextui-org/react'
+import { useEffect, useState } from 'react'
 
 export const ScrollToTop = () => {
   const [scrolled, setScrolled] = useState(false)
-  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => {

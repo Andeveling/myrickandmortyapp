@@ -1,10 +1,10 @@
 import { Context } from '@/Context'
-import { Progress, Row, Switch, Text } from '@nextui-org/react'
-import { useContext } from 'react'
-import { styleContainer, styledHead, styleText } from './stylesHeader'
 import Brightness4OutlinedIcon from '@mui/icons-material/Brightness4Outlined'
 import Brightness5OutlinedIcon from '@mui/icons-material/Brightness5Outlined'
+import { Progress, Row, Switch, Text } from '@nextui-org/react'
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { styleContainer, styledHead, styleText } from './stylesHeader'
 
 export const Header = () => {
   const context = useContext(Context)

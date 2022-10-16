@@ -1,10 +1,8 @@
 import { Container } from '@nextui-org/react'
-import { ScrollToTop } from '../ScrollToTop'
+import { ScrollToTop } from '@/components'
+import { PropsWithChildren } from 'react'
 
-interface LayoutI {
-  children: JSX.Element | JSX.Element[]
-}
-export const Layout = ({ children }: LayoutI) => {
+export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <Container fluid xl>
       {children}

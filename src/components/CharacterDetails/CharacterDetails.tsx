@@ -1,9 +1,9 @@
+import { selectColorBadge } from '@/components'
 import { useGetCharacterByIdQuery } from '@/redux'
 import { extractId } from '@/utils/extractId'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { Avatar, Badge, Button, Card, Grid, Loading, Row, Spacer, Text } from '@nextui-org/react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { selectColorBadge } from '../CharactersCard'
 
 const CharacterDetails = () => {
   const params = useParams()
