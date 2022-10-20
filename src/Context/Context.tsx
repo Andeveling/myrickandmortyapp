@@ -1,6 +1,6 @@
 import { darkTheme, lightTheme } from '@/Theme'
 import { NextUIProvider } from '@nextui-org/react'
-import { createContext, Dispatch, SetStateAction, useState } from 'react'
+import { createContext, Dispatch, SetStateAction, useState, PropsWithChildren } from 'react'
 
 export interface ContextI {
   isDark: boolean
@@ -10,11 +10,7 @@ export interface ContextI {
 }
 export const Context = createContext<ContextI | null>(null)
 
-interface Props {
-  children: JSX.Element | JSX.Element[]
-}
-
-export const ContextProvider = ({ children }: Props) => {
+export const ContextProvider = ({ children }: PropsWithChildren) => {
   const [isDark, setIsDark] = useState<boolean>(false)
   const [currentPage, setCurrentPage] = useState<number>(1)
 

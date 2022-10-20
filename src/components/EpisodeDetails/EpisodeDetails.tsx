@@ -7,7 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 const EpisodeDetails = () => {
   const params = useParams()
   const navigate = useNavigate()
-  const episode = useGetEpisodeByIdQuery(params.id || '')
+  const episode = useGetEpisodeByIdQuery(params.id ?? '')
 
   let content
   if (episode.isLoading) content = <Loading size='xl' color='success' />

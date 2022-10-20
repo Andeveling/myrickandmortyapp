@@ -21,13 +21,13 @@ const AvatarEpisode = ({ characterLink }: { characterLink: EpisodeI['url'] }) =>
         disableOutline
         content={character?.status}
         size='md'
-        color={selectColorBadge(character?.status || '')}>
+        color={selectColorBadge(character?.status ?? '')}>
         <Card variant='flat' isHoverable isPressable>
           <Avatar
             squared
-            src={character?.image || ''}
+            src={character?.image ?? ''}
             size='xl'
-            color={selectColorBadge(character?.status || '')}
+            color={selectColorBadge(character?.status ?? '')}
             bordered
             css={{ cursor: 'pointer' }}
             onClick={() => navigate(`/character/${character?.id}`)}

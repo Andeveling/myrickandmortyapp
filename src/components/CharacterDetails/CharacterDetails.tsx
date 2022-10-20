@@ -8,7 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 const CharacterDetails = () => {
   const params = useParams()
   const navigate = useNavigate()
-  const { data: character, isSuccess, isLoading, isError } = useGetCharacterByIdQuery(params.id || '')
+  const { data: character, isSuccess, isLoading, isError } = useGetCharacterByIdQuery(params.id ?? '')
 
   let content
   if (isLoading) content = <Loading size='xl' color='success' />
@@ -37,12 +37,12 @@ const CharacterDetails = () => {
                 disableOutline
                 content={character?.status}
                 size='md'
-                color={selectColorBadge(character?.status || '')}>
+                color={selectColorBadge(character?.status ?? '')}>
                 <Avatar
                   squared
-                  src={character?.image || ''}
+                  src={character?.image ?? ''}
                   size='xl'
-                  color={selectColorBadge(character?.status || '')}
+                  color={selectColorBadge(character?.status ?? '')}
                   bordered
                 />
               </Badge>
@@ -71,7 +71,7 @@ const CharacterDetails = () => {
             <Card variant='bordered' borderWeight='extrabold' css={{ maxWidth: 370 }}>
               <Card.Body css={{ p: 0 }}>
                 <Card.Image
-                  src={character?.image || ''}
+                  src={character?.image ?? ''}
                   width='100%'
                   height='100%'
                   objectFit='cover'

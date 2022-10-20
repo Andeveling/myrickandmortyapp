@@ -6,12 +6,12 @@ import { useContext, useMemo, useRef } from 'react'
 
 export const Characters = () => {
   const context = useContext(Context)
-  const { data: pages, isLoading, isError, isSuccess } = useGetCharactersQuery(context?.currentPage || 1)
+  const { data: pages, isLoading, isError, isSuccess } = useGetCharactersQuery(context?.currentPage ?? 1)
   const { value: search, bindings } = useInput('')
   const searchInput = useRef(null)
 
   const handlePage = (page: number) => {
-    context?.setCurrentPage(page || 1)
+    context?.setCurrentPage(page ?? 1)
   }
 
   const filteredCharacters = useMemo(
