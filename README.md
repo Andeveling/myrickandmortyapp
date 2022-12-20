@@ -19,6 +19,7 @@ An api based on the rick and morty series, using ReactJs, Redux-Toolkit, NextUI.
 **🖥 Client:** React, Redux, NextUI
 
 **⚙️ Server:** https://rickandmortyapi.com/
+
 **🚀 Deploy:** https://myrickandmortyandeveling.netlify.app/
 
 ## 🚀 Authors
